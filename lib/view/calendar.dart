@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:abushakir/abushakir.dart';
 
-
 import 'calender_converter.dart';
 
 class CalendarPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _CalendarPageState extends State<CalendarPage> {
       backgroundColor: Colors.teal,
       appBar: AppBar(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 227, 227, 227),
         title: const Text('Ethiopian Calendar'),
         elevation: 0,
       ),
@@ -52,7 +51,7 @@ class _CalendarPageState extends State<CalendarPage> {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color:Colors.white,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
@@ -153,12 +152,12 @@ class _CalendarPageState extends State<CalendarPage> {
                                 child: Center(
                                   child: Text(
                                     '${e[2]}',
-                                    style:  TextStyle(
-                                      fontSize: 20,
-                                      color: today.compareTo(fromArray(e)) == 0
-                                          ? Colors.white
-                                          : Colors.teal
-                                    ),
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color:
+                                            today.compareTo(fromArray(e)) == 0
+                                                ? Colors.white
+                                                : Colors.teal),
                                   ),
                                 ),
                               ),

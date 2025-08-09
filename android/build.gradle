@@ -1,41 +1,18 @@
-
-Copy
 buildscript {
-    ext.kotlin_version = "1.8.22"
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.3.15'
+        classpath 'com.android.tools.build:gradle:8.1.0' // Ensure AGP is 8.1.0 or higher
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
+        classpath 'com.google.gms:google-services:4.4.2'
     }
 }
-
-apply plugin: 'kotlin'
 
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
-}
-
-rootProject.buildDir = '../build'
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
-}
-
-tasks.register("myClean", Delete) {
-    delete rootProject.buildDir
-}
-
-tasks.named("clean").configure {
-    dependsOn("myClean")
-    description = "Deletes the build directory and all generated files"
-    group = "Build"
 }
